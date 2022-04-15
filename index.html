@@ -4,9 +4,10 @@
     <title>Paintball Game in Virtual Reality</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
     <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-    <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>   
+    <!--script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script-->   
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <!--Local Scripts-->
     <script src="./shoot.js"></script>
     <script src="./playerMovement.js"></script>
@@ -28,7 +29,7 @@
       </a-assets>
 
       <!--Environment-->
-      <a-entity id = "environment" environment = "preset: forest; skyType: gradient; lighting: point"> </a-entity>
+      <a-entity id = "environment" environment = "preset: threetowers; skyType: gradient; lighting: point"> </a-entity>
 
       <!--Sounds-->
       <a-entity id = "sound1" sound = "src: #splash; poolSize: 2; autoplay: false; volume: 1; loop: false"></a-entity>
@@ -40,7 +41,7 @@
 
     <!--Camera and Cursor-->
     <a-entity position = "0 -1 0" gltf-model = "#collider" visible = "true" id = "navigation-mesh" nav-mesh></a-entity>
-    <a-entity movement-controls = "speed: 0.2; constrainToNavMesh: true" position = "0 0 5">
+    <a-entity id = "camera-rig" movement-controls = "speed: 0.2; constrainToNavMesh: true" position = "0 0 5">
     <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: false">
       <a-entity id="weapon" gltf-model="#shooter" position="0 -2.6 -0.2" rotation="-20 -145 20" scale="0.05 0.05 0.05"
         player-movement>
